@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Estates — Luxury Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Mobile overlay -->
+<div class="overlay-bg" id="overlayBg" onclick="closeMobileMenu()"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="closeMobileMenu()">✕</button>
+  <a href="#featured">Properties</a>
+  <a href="#listings">Listings</a>
+  <a href="#about">About</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#newsletter">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">Meridian<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#featured">Properties</a></li>
+    <li><a href="#listings">Listings</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#newsletter">Contact</a></li>
+  </ul>
+  <a href="#newsletter" class="nav-cta">Enquire Now</a>
+  <div class="hamburger" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-img-overlay"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Luxury Real Estate</div>
+    <h1 class="hero-h1">Where Homes<br>Become <em>Legacies</em></h1>
+    <p class="hero-sub">Curated properties of extraordinary character across Nigeria's most prestigious addresses.</p>
+    <div class="hero-actions">
+      <a href="#featured" class="btn-primary">Explore Properties</a>
+      <a href="#about" class="btn-ghost">Meet the Agent</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<section id="search-section">
+  <div class="search-wrapper">
+    <span class="search-label">Find Your Perfect Property</span>
+    <div class="search-tabs">
+      <button class="search-tab active" onclick="setTab(this)">Buy</button>
+      <button class="search-tab" onclick="setTab(this)">Rent</button>
+      <button class="search-tab" onclick="setTab(this)">Sell</button>
+    </div>
+    <div class="search-bar">
+      <div class="search-field">
+        <span class="field-icon">📍</span>
+        <div class="field-inner">
+          <span class="field-label">Location</span>
+          <select>
+            <option>Anywhere in Nigeria</option>
+            <option>Ikoyi, Lagos</option>
+            <option>Victoria Island, Lagos</option>
+            <option>Maitama, Abuja</option>
+            <option>Wuse 2, Abuja</option>
+            <option>GRA, Port Harcourt</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-field">
+        <span class="field-icon">🏡</span>
+        <div class="field-inner">
+          <span class="field-label">Property Type</span>
+          <select>
+            <option>All Types</option>
+            <option>Detached Villa</option>
+            <option>Penthouse</option>
+            <option>Luxury Apartment</option>
+            <option>Terrace House</option>
+            <option>Commercial</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-field">
+        <span class="field-icon">💰</span>
+        <div class="field-inner">
+          <span class="field-label">Price Range</span>
+          <select>
+            <option>Any Budget</option>
+            <option>₦50M – ₦100M</option>
+            <option>₦100M – ₦250M</option>
+            <option>₦250M – ₦500M</option>
+            <option>₦500M – ₦1B</option>
+            <option>₦1B+</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-field">
+        <span class="field-icon">🛏</span>
+        <div class="field-inner">
+          <span class="field-label">Bedrooms</span>
+          <select>
+            <option>Any</option>
+            <option>1 – 2</option>
+            <option>3 – 4</option>
+            <option>5+</option>
+          </select>
+        </div>
+      </div>
+      <button class="search-btn">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-number" data-target="420">0</div>
+      <div class="stat-label">Properties Sold</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.1s">
+      <div class="stat-number" data-target="14">0</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.2s">
+      <div class="stat-number" data-target="98">0</div>
+      <div class="stat-label">% Client Satisfaction</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.3s">
+      <div class="stat-number" data-target="60">0</div>
+      <div class="stat-label">Billion ₦ in Sales</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROPERTIES -->
+<section id="featured">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Featured Listings</div>
+      <h2 class="section-title">Exceptional Homes,<br><em>Exceptional Lives</em></h2>
+    </div>
+    <a href="#listings" class="view-all">View All Properties</a>
+  </div>
+  <div class="properties-layout reveal">
+    <!-- Large card -->
+    <div class="prop-card large">
+      <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&auto=format&fit=crop" alt="Ikoyi Estate">
+      <div class="prop-card-overlay"></div>
+      <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      <div class="prop-card-info">
+        <div class="prop-status sale">For Sale</div>
+        <div class="prop-name">The Ikoyi Grand Estate</div>
+        <div class="prop-location">Banana Island, Ikoyi — Lagos</div>
+        <div class="prop-price">₦ 850,000,000</div>
+        <div class="prop-features">
+          <span>🛏 6 Beds</span>
+          <span>🚿 7 Baths</span>
+          <span>📐 1,200 sqm</span>
+          <span>🚗 4 Garage</span>
+        </div>
+      </div>
+    </div>
+    <!-- Small card 1 -->
+    <div class="prop-card">
+      <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=700&auto=format&fit=crop" alt="VI Penthouse">
+      <div class="prop-card-overlay"></div>
+      <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      <div class="prop-card-info">
+        <div class="prop-status rent">For Rent</div>
+        <div class="prop-name">Victoria Island Penthouse</div>
+        <div class="prop-location">Eko Atlantic, VI — Lagos</div>
+        <div class="prop-price">₦ 18,000,000 / yr</div>
+        <div class="prop-features">
+          <span>🛏 4 Beds</span>
+          <span>🚿 4 Baths</span>
+          <span>📐 450 sqm</span>
+        </div>
+      </div>
+    </div>
+    <!-- Small card 2 -->
+    <div class="prop-card">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&auto=format&fit=crop" alt="Maitama Villa">
+      <div class="prop-card-overlay"></div>
+      <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      <div class="prop-card-info">
+        <div class="prop-status sale">For Sale</div>
+        <div class="prop-name">Maitama Residences</div>
+        <div class="prop-location">Maitama — Abuja</div>
+        <div class="prop-price">₦ 420,000,000</div>
+        <div class="prop-features">
+          <span>🛏 5 Beds</span>
+          <span>🚿 5 Baths</span>
+          <span>📐 700 sqm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTINGS GRID -->
+<section id="listings">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">New Listings</div>
+      <h2 class="section-title">Fresh on the<br><em>Market</em></h2>
+    </div>
+    <a href="#" class="view-all">Browse All</a>
+  </div>
+  <div class="listings-grid">
+
+    <div class="listing-card reveal">
+      <div class="listing-img-wrap">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop" alt="">
+        <div class="listing-badge badge-new">New</div>
+        <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="listing-body">
+        <div class="listing-price">₦ 290,000,000</div>
+        <div class="listing-name">Lekki Phase 1 Terrace Duplex</div>
+        <div class="listing-loc">📍 Lekki Phase 1, Lagos</div>
+        <div class="listing-divider"></div>
+        <div class="listing-specs">
+          <div class="spec"><span class="spec-val">4</span><span class="spec-key">Beds</span></div>
+          <div class="spec"><span class="spec-val">4</span><span class="spec-key">Baths</span></div>
+          <div class="spec"><span class="spec-val">380</span><span class="spec-key">sqm</span></div>
+          <div class="spec"><span class="spec-val">2</span><span class="spec-key">Garage</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card reveal" style="transition-delay:.1s">
+      <div class="listing-img-wrap">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&auto=format&fit=crop" alt="">
+        <div class="listing-badge badge-exclusive">Exclusive</div>
+        <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="listing-body">
+        <div class="listing-price">₦ 1,200,000,000</div>
+        <div class="listing-name">Banana Island Waterfront Villa</div>
+        <div class="listing-loc">📍 Banana Island, Lagos</div>
+        <div class="listing-divider"></div>
+        <div class="listing-specs">
+          <div class="spec"><span class="spec-val">7</span><span class="spec-key">Beds</span></div>
+          <div class="spec"><span class="spec-val">8</span><span class="spec-key">Baths</span></div>
+          <div class="spec"><span class="spec-val">1500</span><span class="spec-key">sqm</span></div>
+          <div class="spec"><span class="spec-val">6</span><span class="spec-key">Garage</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card reveal" style="transition-delay:.2s">
+      <div class="listing-img-wrap">
+        <img src="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=600&auto=format&fit=crop" alt="">
+        <div class="listing-badge badge-reduced">Price Reduced</div>
+        <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="listing-body">
+        <div class="listing-price">₦ 165,000,000</div>
+        <div class="listing-name">Wuse 2 Executive Apartment</div>
+        <div class="listing-loc">📍 Wuse 2, Abuja</div>
+        <div class="listing-divider"></div>
+        <div class="listing-specs">
+          <div class="spec"><span class="spec-val">3</span><span class="spec-key">Beds</span></div>
+          <div class="spec"><span class="spec-val">3</span><span class="spec-key">Baths</span></div>
+          <div class="spec"><span class="spec-val">220</span><span class="spec-key">sqm</span></div>
+          <div class="spec"><span class="spec-val">2</span><span class="spec-key">Garage</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card reveal">
+      <div class="listing-img-wrap">
+        <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?w=600&auto=format&fit=crop" alt="">
+        <div class="listing-badge badge-new">New</div>
+        <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="listing-body">
+        <div class="listing-price">₦ 75,000,000</div>
+        <div class="listing-name">Magodo GRA Phase 2 Bungalow</div>
+        <div class="listing-loc">📍 Magodo GRA, Lagos</div>
+        <div class="listing-divider"></div>
+        <div class="listing-specs">
+          <div class="spec"><span class="spec-val">3</span><span class="spec-key">Beds</span></div>
+          <div class="spec"><span class="spec-val">3</span><span class="spec-key">Baths</span></div>
+          <div class="spec"><span class="spec-val">280</span><span class="spec-key">sqm</span></div>
+          <div class="spec"><span class="spec-val">2</span><span class="spec-key">Garage</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card reveal" style="transition-delay:.1s">
+      <div class="listing-img-wrap">
+        <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&auto=format&fit=crop" alt="">
+        <div class="listing-badge badge-exclusive">Exclusive</div>
+        <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="listing-body">
+        <div class="listing-price">₦ 550,000,000</div>
+        <div class="listing-name">Asokoro Hilltop Mansion</div>
+        <div class="listing-loc">📍 Asokoro, Abuja</div>
+        <div class="listing-divider"></div>
+        <div class="listing-specs">
+          <div class="spec"><span class="spec-val">6</span><span class="spec-key">Beds</span></div>
+          <div class="spec"><span class="spec-val">6</span><span class="spec-key">Baths</span></div>
+          <div class="spec"><span class="spec-val">950</span><span class="spec-key">sqm</span></div>
+          <div class="spec"><span class="spec-val">4</span><span class="spec-key">Garage</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card reveal" style="transition-delay:.2s">
+      <div class="listing-img-wrap">
+        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&auto=format&fit=crop" alt="">
+        <div class="listing-badge badge-new">New</div>
+        <div class="prop-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="listing-body">
+        <div class="listing-price">₦ 210,000,000</div>
+        <div class="listing-name">GRA Phase 3 Semi-Detached</div>
+        <div class="listing-loc">📍 GRA Phase 3, Port Harcourt</div>
+        <div class="listing-divider"></div>
+        <div class="listing-specs">
+          <div class="spec"><span class="spec-val">4</span><span class="spec-key">Beds</span></div>
+          <div class="spec"><span class="spec-val">4</span><span class="spec-key">Baths</span></div>
+          <div class="spec"><span class="spec-val">420</span><span class="spec-key">sqm</span></div>
+          <div class="spec"><span class="spec-val">2</span><span class="spec-key">Garage</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT / AGENT -->
+<section id="about">
+  <div class="about-img-wrap reveal-left">
+    <div class="about-img-frame">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&auto=format&fit=crop" alt="Agent">
+      <div class="about-img-badge">
+        <div class="badge-num">14</div>
+        <div class="badge-txt">Years in<br>Real Estate</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-content reveal-right">
+    <div class="section-tag">Meet Your Agent</div>
+    <h2 class="section-title">David <em>Okonkwo</em><br>Principal Agent</h2>
+    <p class="about-text">
+      With over a decade navigating Nigeria's most prestigious property markets, I've built a reputation for discretion, precision, and an unwavering commitment to my clients' aspirations. From Banana Island to Asokoro, every transaction is treated as a legacy in the making.
+    </p>
+    <div class="about-services">
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <p><strong>Property Acquisition</strong>End-to-end buying guidance for residential and commercial.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <p><strong>Luxury Rentals</strong>Short and long-term placements in prime locations.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <p><strong>Property Valuation</strong>Accurate market appraisals backed by live data.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-dot"></div>
+        <p><strong>Investment Advisory</strong>Portfolio strategy for high-net-worth individuals.</p>
+      </div>
+    </div>
+    <a href="tel:+2348000000000" class="btn-primary" style="background:var(--gold); color:white; text-decoration:none;">+234 800 000 0000</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Client Stories</div>
+      <h2 class="section-title">What Clients<br><em>Say About Us</em></h2>
+    </div>
+  </div>
+  <div class="testimonials-track">
+    <!-- doubled for seamless loop -->
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">David found us our dream home in Ikoyi in under three weeks. His knowledge of the market is second to none and his negotiation secured us ₦30M off asking price.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+        <div>
+          <div class="testi-name">Amina Bello</div>
+          <div class="testi-role">Purchased — Ikoyi, Lagos</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Selling our Asokoro property was seamless. The marketing strategy was world-class — we had four serious offers within the first week of listing.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+        <div>
+          <div class="testi-name">Chukwuemeka Osei</div>
+          <div class="testi-role">Sold — Asokoro, Abuja</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">As a foreign investor, I needed someone I could trust completely. Meridian Estates handled every detail flawlessly. My GRA duplex has already appreciated 25% in two years.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+        <div>
+          <div class="testi-name">Sarah K.</div>
+          <div class="testi-role">Investor — Port Harcourt</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">The level of professionalism is rare in this industry. They delivered exactly what they promised — a stunning penthouse at a fair market price, handled with total discretion.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="">
+        <div>
+          <div class="testi-name">Femi Adeyinka</div>
+          <div class="testi-role">Purchased — VI, Lagos</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <!-- Clone for loop -->
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">David found us our dream home in Ikoyi in under three weeks. His knowledge of the market is second to none and his negotiation secured us ₦30M off asking price.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+        <div>
+          <div class="testi-name">Amina Bello</div>
+          <div class="testi-role">Purchased — Ikoyi, Lagos</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Selling our Asokoro property was seamless. The marketing strategy was world-class — we had four serious offers within the first week of listing.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+        <div>
+          <div class="testi-name">Chukwuemeka Osei</div>
+          <div class="testi-role">Sold — Asokoro, Abuja</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">As a foreign investor, I needed someone I could trust completely. Meridian Estates handled every detail flawlessly. My GRA duplex has already appreciated 25% in two years.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+        <div>
+          <div class="testi-name">Sarah K.</div>
+          <div class="testi-role">Investor — Port Harcourt</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">The level of professionalism is rare in this industry. They delivered exactly what they promised — a stunning penthouse at a fair market price, handled with total discretion.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="">
+        <div>
+          <div class="testi-name">Femi Adeyinka</div>
+          <div class="testi-role">Purchased — VI, Lagos</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="section-tag newsletter-tag reveal">Stay Informed</div>
+  <h2 class="section-title newsletter-title reveal" style="margin:16px auto 0; max-width:500px;">
+    Exclusive Listings,<br><em>First to Your Inbox</em>
+  </h2>
+  <p class="newsletter-sub reveal">Join our private list and receive curated listings before they reach the open market.</p>
+  <form class="newsletter-form reveal" onsubmit="handleSubscribe(event)">
+    <input type="email" placeholder="Your email address" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo2">Meridian<span>.</span></a>
+      <p class="footer-desc">Nigeria's premier luxury real estate consultancy. Connecting discerning buyers with exceptional properties across Lagos, Abuja, and Port Harcourt.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">ig</a>
+        <a href="#" class="social-link">tw</a>
+        <a href="#" class="social-link">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Properties</h4>
+      <ul>
+        <li><a href="#">Residential</a></li>
+        <li><a href="#">Commercial</a></li>
+        <li><a href="#">Off-Plan</a></li>
+        <li><a href="#">Luxury Rentals</a></li>
+        <li><a href="#">Investment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Locations</h4>
+      <ul>
+        <li><a href="#">Lagos — Ikoyi</a></li>
+        <li><a href="#">Lagos — Lekki</a></li>
+        <li><a href="#">Abuja — Maitama</a></li>
+        <li><a href="#">Abuja — Asokoro</a></li>
+        <li><a href="#">Port Harcourt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">+234 800 000 0000</a></li>
+        <li><a href="#">info@meridianestates.ng</a></li>
+        <li><a href="#">14 Bourdillon Road, Ikoyi</a></li>
+        <li><a href="#">Lagos, Nigeria</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Meridian Estates. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+link javascript file
+<script src="script.js"></script>
+
+</body>
+</html>
